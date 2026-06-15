@@ -118,10 +118,17 @@ python -m mklink flush-memory 0x20010000:0x11,0x22 0x20010100:0x44,0x55 --verify
 
 ## 探针固件（MK-Firmware）
 
-| 文件 | 适用探针 |
-|------|----------|
-| `MK-Firmware/MicroLink_V3.3.1.uf2` | MicroLink V3 |
-| `MK-Firmware/MicroLink_V4.3.1.uf2` | MicroLink V4 |
+| 文件 | 适用探针 | 状态 |
+|------|----------|------|
+| `MK-Firmware/MicroLink_V3.3.2.uf2` | MicroLink V3 | **最新** |
+| `MK-Firmware/MicroLink_V4.3.2.uf2` | MicroLink V4 | **最新** |
+| `MK-Firmware/MicroLink_V3.3.1.uf2` | MicroLink V3 | 旧版（高速内存协议首发） |
+| `MK-Firmware/MicroLink_V4.3.1.uf2` | MicroLink V4 | 旧版（高速内存协议首发） |
+
+### V3.3.2 / V4.3.2 更新内容
+
+- 🚀 **M0 内核下载提速** — 解决 M0 内核下载速度慢的问题，支持稳定 **10 MB/s** 高速在线 / 脱机下载
+- 🐛 **脱机下载兼容性** — 解决部分单片机「在线能下载、脱机下载不了」的问题
 
 `firmware_check.py` 在 `project-init` 和 GUI 连接时自动比对探针版本，过低时提示拖入同 major 号的 `.uf2` 升级。`dump-memory` / `flush-memory` 需 V3.3.1 / V4.3.1 及以上固件。
 
